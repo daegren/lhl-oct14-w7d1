@@ -1,0 +1,15 @@
+.calendar-day {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar-day:hover {
+  background: #c3e6cb;
+  font-weight: bold;
+}
+
+.calendar-day--current {
+  background: #b8daff;
+}
