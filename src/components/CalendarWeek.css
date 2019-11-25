@@ -1,0 +1,7 @@
+.calendar-week {
+  height: 2em;
+}
+
+.calendar-week .calendar-week--header {
+  font-weight: bold;
+}
