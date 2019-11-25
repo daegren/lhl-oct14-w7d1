@@ -2,10 +2,20 @@ import React from "react";
 import CalendarDay from './CalendarDay'
 import './CalendarWeek.css'
 
-const CalendarWeek = ({ weekNumber, daysPerWeek, hasWeekends, onDaySelected }) => {
+const CalendarWeek = ({
+  weekNumber,
+  daysPerWeek,
+  hasWeekends,
+  onDaySelected,
+  selectedDay,
+  today
+}) => {
   const days = []
   for (let i = 0; i < daysPerWeek; i++) {
     days.push(i + 1);
+  }
+  if (hasWeekends) {
+    days.push('we')
   }
 
   const handleDaySelected = day => {
@@ -18,9 +28,14 @@ const CalendarWeek = ({ weekNumber, daysPerWeek, hasWeekends, onDaySelected }) =
     <tr className="calendar-week">
       <td className="calendar-week--header">{`W${weekNumber}`}</td>
       {days.map(day => (
-        <CalendarDay label={day} onDaySelected={handleDaySelected} />
+        <CalendarDay
+          key={`d${day}`}
+          label={day}
+          onDaySelected={handleDaySelected}
+          currentDay={weekNumber === selectedDay.week && day === selectedDay.day}
+          today={weekNumber === today.week && day === today.day}
+        />
       ))}
-      {hasWeekends ? <CalendarDay label="we" onDaySelected={handleDaySelected} /> : null}
     </tr>
   );
 }

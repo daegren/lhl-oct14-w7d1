@@ -10,6 +10,10 @@
   font-weight: bold;
 }
 
+.calendar-day--selected {
+  background: #c3e6cb;
+}
+
 .calendar-day--current {
   background: #b8daff;
 }

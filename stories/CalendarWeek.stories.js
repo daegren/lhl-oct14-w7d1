@@ -14,6 +14,7 @@ export const basic = () => (
       <CalendarWeek
         weekNumber={4}
         daysPerWeek={5}
+        selectedDay={{ week: 4, day: 4 }}
         hasWeekends
         onDaySelected={action('onDaySelected')} />
     </tbody>
